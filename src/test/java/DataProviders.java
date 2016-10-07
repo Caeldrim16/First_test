@@ -14,12 +14,4 @@ public class DataProviders {
         list.add(new Object[]{"dealingsibit@gmail.com","sibit12345"});
         return list.iterator();
     }
-
-    @DataProvider (name = "Data for find")
-    public static Iterator<Object[]> forFind() throws Exception {
-        List<Object[]> list = new ArrayList<Object[]>();
-        list.add(new Object[]{"Специалист по тестированию"});
-        return list.iterator();
-    }
-
 }
