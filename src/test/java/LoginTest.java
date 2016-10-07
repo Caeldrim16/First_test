@@ -20,14 +20,14 @@ public class LoginTest {
     @BeforeTest
     private void connection () throws Exception {
 //        driver = new FirefoxDriver();
-        System.setProperty("webdriver.chrome.driver","C:/Program Files (x86)/Google/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver,10000);
     }
 
     @Test(dataProvider = "Data for login", dataProviderClass = DataProviders.class)
     public void loginTest(String login, String pass) throws Exception {
-        driver.get("https://accounts.google.com/ServiceLogin?service=mail&continue=https://mail.google.com/mail/&hl=ru#identifier");
+        driver.get("https://accounts.google.com/");
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("Email")));
         WebElement email = driver.findElement(By.name("Email"));
