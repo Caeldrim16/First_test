@@ -29,15 +29,8 @@ public class LoginTest {
     public void loginTest(String login, String pass) throws Exception {
         driver.get("https://accounts.google.com/");
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("Email")));
-        WebElement email = driver.findElement(By.name("Email"));
-        email.sendKeys(login);
-        email.submit();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("Passwd")));
-        WebElement passwd = driver.findElement(By.name("Passwd"));
-        passwd.sendKeys(pass);
-        passwd.submit();
+        Login loginm = new Login(driver, wait);
+        loginm.login(login, pass);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@title, 'Dealing Dealingoviy')]"))).getText();
     }
